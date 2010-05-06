@@ -11,7 +11,8 @@
 @implementation ShowOffPadViewController
 
 @synthesize webDisplayiPad;
-@synthesize nextButton, prevButton, footerButton, notesArea;
+@synthesize nextButton, prevButton, footerButton, notesArea, slideProgress, timeElapsed;
+@synthesize slideProgressBar, timeProgress;
 
 - (void)viewDidLoad {
 	NSString *urlAddress = @"http://localhost:9090";
@@ -32,6 +33,7 @@
 	if (![output isEqualToString:@""]) {
 		notesArea.text = output;
 	}
+	[self updateProgress];
 }
 
 - (IBAction) doPrevButton {
@@ -39,6 +41,17 @@
 	if (![output isEqualToString:@""]) {
 		notesArea.text = output;
 	}
+	[self updateProgress];
+}
+
+- (void) updateProgress {
+	NSString *progress = [webDisplayiPad stringByEvaluatingJavaScriptFromString:@"getSlideProgress()"];
+	slideProgress.text = progress;
+	NSArray *currentTotal = [progress componentsSeparatedByString:@"/"];
+	float currSlide = [[currentTotal objectAtIndex:0] floatValue];
+	float totSlides = [[currentTotal objectAtIndex:1] floatValue];
+	float currProgress = currSlide / totSlides;
+	slideProgressBar.progress = currProgress;
 }
 
 - (IBAction) doFooterButton {
