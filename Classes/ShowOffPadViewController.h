@@ -9,20 +9,23 @@
 #import <UIKit/UIKit.h>
 
 @interface ShowOffPadViewController : UIViewController {
-  IBOutlet UIWebView *webDisplayiPad;
-  UIButton *nextButton;
-  UIButton *prevButton;
-  UILabel *notesArea;
+	IBOutlet UIWebView *webDisplayiPad;
+	UIButton *nextButton;
+	UIButton *prevButton;
+	UIButton *footerButton;
+	UILabel *notesArea;
 }
 
 @property(nonatomic,retain) UIWebView *webDisplayiPad;
 
 @property (nonatomic, retain) IBOutlet UIButton *nextButton;
 @property (nonatomic, retain) IBOutlet UIButton *prevButton;
+@property (nonatomic, retain) IBOutlet UIButton *footerButton;
 @property (nonatomic, retain) IBOutlet UILabel  *notesArea;
 
 - (IBAction)doNextButton;
 - (IBAction)doPrevButton;
+- (IBAction)doFooterButton;
 
 @end
 

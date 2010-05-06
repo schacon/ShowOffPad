@@ -11,7 +11,7 @@
 @implementation ShowOffPadViewController
 
 @synthesize webDisplayiPad;
-@synthesize nextButton, prevButton, notesArea;
+@synthesize nextButton, prevButton, footerButton, notesArea;
 
 - (IBAction) doNextButton {
 	NSLog(@"NEXT");
@@ -21,9 +21,11 @@
 }
 
 - (IBAction) doPrevButton {
-	NSLog(@"PREV");
-	NSString *output = [webDisplayiPad stringByEvaluatingJavaScriptFromString:@"prevStep()"];
-	NSLog(@"OUT :%@", output);
+	[webDisplayiPad stringByEvaluatingJavaScriptFromString:@"prevStep()"];
+}
+
+- (IBAction) doFooterButton {
+	[webDisplayiPad stringByEvaluatingJavaScriptFromString:@"toggleFooter()"];
 }
 
 
