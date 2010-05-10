@@ -13,6 +13,6 @@
 	IBOutlet UIWebView *mainView;
 }
 
-@property(nonatomic,retain) UIWebView *mainView;
+@property(assign, readwrite) UIWebView *mainView;
 
 @end

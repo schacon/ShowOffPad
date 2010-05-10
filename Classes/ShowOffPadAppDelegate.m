@@ -23,15 +23,19 @@
 	presentController = [[ShowOffPadPresentController alloc] 
 						 initWithNibName:@"ShowOffPadPresentController" 
 						 bundle:nil];
-	viewController.extDisplay = presentController.mainView;
+	viewController.extDisplay = presentController;
 	
 	if([[UIScreen screens]count] > 1) //if there are more than 1 screens connected to the device
 	{
 		UIScreenMode *bestScreenMode;
+		BOOL screenChoosen = FALSE;
 		for(int i = 0; i < [[[[UIScreen screens] objectAtIndex:1] availableModes]count]; i++)
 		{
 			UIScreenMode *current = [[[[UIScreen screens]objectAtIndex:1]availableModes]objectAtIndex:i];
-			if((current.size.width == 1024) && (current.size.height == 768)) {
+			if (!screenChoosen) {
+				bestScreenMode = current;
+			}
+			if (current.size.width == 1024.0) {
 				bestScreenMode = current;
 			}
 		}
@@ -52,6 +56,7 @@
 		
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
+
 	
 	return YES;
 }

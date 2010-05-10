@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ShowOffPadPresentController;
+
 @interface ShowOffPadViewController : UIViewController {
 	IBOutlet UIWebView *webDisplayiPad;
-	IBOutlet UIWebView *extDisplay;
+	ShowOffPadPresentController *extDisplay;
 	UIButton *nextButton;
 	UIButton *prevButton;
 	UIButton *footerButton;
@@ -26,7 +28,7 @@
 }
 
 @property(nonatomic,retain) UIWebView *webDisplayiPad;
-@property(nonatomic,retain) UIWebView *extDisplay;
+@property(nonatomic,retain) ShowOffPadPresentController *extDisplay;
 
 @property (nonatomic, retain) IBOutlet UIButton *nextButton;
 @property (nonatomic, retain) IBOutlet UIButton *prevButton;
@@ -43,6 +45,9 @@
 - (IBAction)doPrevButton;
 - (IBAction)doFooterButton;
 - (IBAction)doResetTimer;
+
+- (void)setScreenStatus;
+- (NSString *) sendJs:(NSString *)command;
 
 - (void) updateProgress;
 - (void)updateCounter:(NSTimer *)theTimer;

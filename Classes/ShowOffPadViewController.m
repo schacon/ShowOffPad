@@ -7,6 +7,7 @@
 //
 
 #import "ShowOffPadViewController.h"
+#import "ShowOffPadPresentController.h"
 
 @implementation ShowOffPadViewController
 
@@ -25,7 +26,7 @@
 	
 	//Load the request in the UIWebView.
 	[webDisplayiPad loadRequest:requestObj];
-	[extDisplay loadRequest:requestObj];
+	[extDisplay.mainView loadRequest:requestObj];
 
 	counter = 0;
 	basetime = 0;
@@ -35,7 +36,27 @@
 								   selector:@selector(updateCounter:)
 								   userInfo:nil
 									repeats:YES];
+	[self setScreenStatus];
+	
 	[super viewDidLoad];
+}
+
+- (void)setScreenStatus {
+	NSString *screenStatus = @"";
+	if([[UIScreen screens]count] > 1) //if there are more than 1 screens connected to the device
+	{
+		for(int i = 0; i < [[[[UIScreen screens] objectAtIndex:1] availableModes]count]; i++)
+		{
+			UIScreenMode *current = [[[[UIScreen screens]objectAtIndex:1]availableModes]objectAtIndex:i];
+			if (current.size.width == 1024.0) {
+				screenStatus = [screenStatus stringByAppendingFormat:@"* %5.0f,%5.0f\n", current.size.width, current.size.height];
+			} else {
+				screenStatus = [screenStatus stringByAppendingFormat:@"  %5.0f,%5.0f\n", current.size.width, current.size.height];
+			}
+		}
+	}
+	
+	padStatus.text = screenStatus;
 }
 
 - (void)updateCounter:(NSTimer *)theTimer {
@@ -50,15 +71,20 @@
 }
 
 - (IBAction) doNextButton {
-	NSString *output = [webDisplayiPad stringByEvaluatingJavaScriptFromString:@"nextStep()"];
+	NSString *output = [self sendJs:@"nextStep()"];
 	if (output && ![output isEqualToString:@""]) {
 		notesArea.text = output;
 	}
 	[self updateProgress];
 }
 
+- (NSString *) sendJs:(NSString *)command {
+	[extDisplay.mainView stringByEvaluatingJavaScriptFromString:command];
+	return [webDisplayiPad stringByEvaluatingJavaScriptFromString:command];
+}
+
 - (IBAction) doPrevButton {
-	NSString *output = [webDisplayiPad stringByEvaluatingJavaScriptFromString:@"prevStep()"];
+	NSString *output = [self sendJs:@"prevStep()"];
 	if (![output isEqualToString:@""]) {
 		notesArea.text = output;
 	}

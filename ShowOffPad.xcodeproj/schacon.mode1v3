@@ -278,6 +278,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -320,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ShowOffPadViewController.m</string>
+								<string>ShowOffPadViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,21 +329,21 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ShowOffPadViewController.m</string>
+										<string>ShowOffPadViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>31CE751111988BE7006C68D9</string>
+										<string>31CE75841198A1DF006C68D9</string>
 										<key>history</key>
 										<array>
 											<string>31CE72A811986D07006C68D9</string>
 											<string>31CE73BE11987F7F006C68D9</string>
-											<string>31CE74D6119884F4006C68D9</string>
-											<string>31CE750D11988BE7006C68D9</string>
-											<string>31CE750E11988BE7006C68D9</string>
-											<string>31CE750F11988BE7006C68D9</string>
-											<string>31CE751011988BE7006C68D9</string>
-											<string>31CE74D5119884F4006C68D9</string>
+											<string>31CE75761198A138006C68D9</string>
+											<string>31CE75771198A138006C68D9</string>
+											<string>31CE75781198A138006C68D9</string>
+											<string>31CE75791198A138006C68D9</string>
+											<string>31CE757F1198A1D4006C68D9</string>
+											<string>31CE75801198A1D4006C68D9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -544,8 +545,8 @@
 		<string>31CE721A1198648C006C68D9</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>311D6F7211922E4400C21AED</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/schacon/Documents/ShowOffPad/ShowOffPad.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -572,7 +573,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ShowOffPadAppDelegate.m</string>
+								<string>ShowOffPadViewController.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
