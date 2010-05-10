@@ -75,7 +75,6 @@
 }
 
 - (IBAction) doNextButton {
-	NSLog(@"FU");
 	NSString *output = [self sendJs:@"nextStep()"];
 	if (output && ![output isEqualToString:@""]) {
 		notesArea.text = output;
@@ -123,10 +122,8 @@
 
 - (IBAction) doToggleMadden:(id) sender {
 	if (maddenToggle.on) {
-		NSLog(@"MADDEN ON");
 		[touchyView setMaddenOn];
 	} else {
-		NSLog(@"MADDEN OFF");
 		[touchyView setMaddenOff];
 	}
 }
