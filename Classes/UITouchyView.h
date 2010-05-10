@@ -12,9 +12,11 @@
 
 @interface UITouchyView : UIView {
 	ShowOffPadViewController *myView;
+	CGPoint startTouchPosition;
 }
 
 @property(assign, readwrite) ShowOffPadViewController *myView;
+@property(assign, readwrite) CGPoint startTouchPosition;
 
 - (void)setView:(ShowOffPadViewController *)theView;
 
