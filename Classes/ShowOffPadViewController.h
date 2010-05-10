@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITouchyView.h"
 
 @class ShowOffPadPresentController;
 
@@ -23,6 +24,7 @@
 	UIProgressView *slideProgressBar;
 	UIProgressView *timeProgress;
 	UILabel  *padStatus;
+	UITouchyView *touchyView;
 	int counter;
 	int basetime;
 }
@@ -40,6 +42,7 @@
 @property (nonatomic, retain) IBOutlet UIProgressView  *slideProgressBar;
 @property (nonatomic, retain) IBOutlet UIProgressView  *timeProgress;
 @property (nonatomic, retain) IBOutlet UILabel  *padStatus;
+@property (nonatomic, retain) IBOutlet UITouchyView  *touchyView;
 
 - (IBAction)doNextButton;
 - (IBAction)doPrevButton;

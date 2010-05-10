@@ -13,7 +13,7 @@
 
 @synthesize webDisplayiPad, extDisplay;
 @synthesize nextButton, prevButton, footerButton, notesArea, slideProgress, timeElapsed;
-@synthesize slideProgressBar, timeProgress, totalTime, padStatus;
+@synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
 
 - (void)viewDidLoad {
 	//NSString *urlAddress = @"http://localhost:9090";
@@ -31,6 +31,8 @@
 	counter = 0;
 	basetime = 0;
 
+	[touchyView setView:self];
+	 
 	[NSTimer scheduledTimerWithTimeInterval:60.0f
 									 target:self
 								   selector:@selector(updateCounter:)
@@ -71,6 +73,7 @@
 }
 
 - (IBAction) doNextButton {
+	NSLog(@"FU");
 	NSString *output = [self sendJs:@"nextStep()"];
 	if (output && ![output isEqualToString:@""]) {
 		notesArea.text = output;
@@ -104,7 +107,7 @@
 }
 
 - (IBAction) doFooterButton {
-	[webDisplayiPad stringByEvaluatingJavaScriptFromString:@"toggleFooter()"];
+	[self sendJs:@"toggleFooter()"];
 }
 
 - (IBAction) doResetTimer {
