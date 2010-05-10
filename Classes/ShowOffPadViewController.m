@@ -31,7 +31,7 @@
 	counter = 0;
 	basetime = 0;
 
-	[NSTimer scheduledTimerWithTimeInterval:1.0f
+	[NSTimer scheduledTimerWithTimeInterval:60.0f
 									 target:self
 								   selector:@selector(updateCounter:)
 								   userInfo:nil
