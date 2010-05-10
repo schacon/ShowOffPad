@@ -8,12 +8,14 @@
 
 #import "ShowOffPadViewController.h"
 #import "ShowOffPadPresentController.h"
+#import "UITouchyView.h"
 
 @implementation ShowOffPadViewController
 
 @synthesize webDisplayiPad, extDisplay;
 @synthesize nextButton, prevButton, footerButton, notesArea, slideProgress, timeElapsed;
 @synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
+@synthesize maddenToggle;
 
 - (void)viewDidLoad {
 	//NSString *urlAddress = @"http://localhost:9090";
@@ -86,6 +88,10 @@
 	return [webDisplayiPad stringByEvaluatingJavaScriptFromString:command];
 }
 
+- (void) mirrorMadden {
+	extDisplay.overlay.image = touchyView.image;
+}
+
 - (IBAction) doPrevButton {
 	NSString *output = [self sendJs:@"prevStep()"];
 	if (![output isEqualToString:@""]) {
@@ -113,6 +119,16 @@
 - (IBAction) doResetTimer {
 	basetime = counter;
 	timeElapsed.text = @"0";
+}
+
+- (IBAction) doToggleMadden:(id) sender {
+	if (maddenToggle.on) {
+		NSLog(@"MADDEN ON");
+		[touchyView setMaddenOn];
+	} else {
+		NSLog(@"MADDEN OFF");
+		[touchyView setMaddenOff];
+	}
 }
 
 // Override to allow orientations other than the default portrait orientation.

@@ -10,13 +10,17 @@
 
 @class ShowOffPadViewController;
 
-@interface UITouchyView : UIView {
+@interface UITouchyView : UIImageView {
 	ShowOffPadViewController *myView;
-	CGPoint startTouchPosition;
+	CGPoint lastPoint;
+	BOOL maddenOn;
+	BOOL mouseSwiped;
 }
 
 @property(assign, readwrite) ShowOffPadViewController *myView;
-@property(assign, readwrite) CGPoint startTouchPosition;
+@property(assign, readwrite) CGPoint lastPoint;
+@property(assign, readwrite) BOOL maddenOn;
+@property(assign, readwrite) BOOL mouseSwiped;
 
 - (void)setView:(ShowOffPadViewController *)theView;
 

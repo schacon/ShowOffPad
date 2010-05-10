@@ -11,8 +11,10 @@
 
 @interface ShowOffPadPresentController : UIViewController {
 	IBOutlet UIWebView *mainView;
+	IBOutlet UIImageView *overlay;
 }
 
 @property(assign, readwrite) UIWebView *mainView;
+@property(assign, readwrite) UIImageView *overlay;
 
 @end

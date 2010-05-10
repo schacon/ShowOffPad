@@ -11,7 +11,7 @@
 
 @implementation ShowOffPadPresentController
 
-@synthesize mainView;
+@synthesize mainView, overlay;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {

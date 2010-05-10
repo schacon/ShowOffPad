@@ -23,7 +23,8 @@
 	UITextField  *totalTime;
 	UIProgressView *slideProgressBar;
 	UIProgressView *timeProgress;
-	UILabel  *padStatus;
+	UILabel   *padStatus;
+	UISwitch  *maddenToggle;
 	UITouchyView *touchyView;
 	int counter;
 	int basetime;
@@ -43,13 +44,17 @@
 @property (nonatomic, retain) IBOutlet UIProgressView  *timeProgress;
 @property (nonatomic, retain) IBOutlet UILabel  *padStatus;
 @property (nonatomic, retain) IBOutlet UITouchyView  *touchyView;
+@property (nonatomic, retain) IBOutlet UISwitch  *maddenToggle;
 
 - (IBAction)doNextButton;
 - (IBAction)doPrevButton;
 - (IBAction)doFooterButton;
 - (IBAction)doResetTimer;
+- (IBAction)doToggleMadden:(id) sender;
 
 - (void)setScreenStatus;
+- (void)mirrorMadden;
+
 - (NSString *) sendJs:(NSString *)command;
 
 - (void) updateProgress;
