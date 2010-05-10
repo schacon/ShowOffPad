@@ -10,12 +10,13 @@
 
 @implementation ShowOffPadViewController
 
-@synthesize webDisplayiPad;
+@synthesize webDisplayiPad, extDisplay;
 @synthesize nextButton, prevButton, footerButton, notesArea, slideProgress, timeElapsed;
-@synthesize slideProgressBar, timeProgress;
+@synthesize slideProgressBar, timeProgress, totalTime, padStatus;
 
 - (void)viewDidLoad {
-	NSString *urlAddress = @"http://localhost:9090";
+	//NSString *urlAddress = @"http://localhost:9090";
+	NSString *urlAddress = @"http://showofftest.heroku.com/";
 	
 	//Create a URL object.
 	NSURL *url = [NSURL URLWithString:urlAddress];
@@ -24,13 +25,33 @@
 	
 	//Load the request in the UIWebView.
 	[webDisplayiPad loadRequest:requestObj];
+	[extDisplay loadRequest:requestObj];
 
-	[super viewDidLoad];	
+	counter = 0;
+	basetime = 0;
+
+	[NSTimer scheduledTimerWithTimeInterval:1.0f
+									 target:self
+								   selector:@selector(updateCounter:)
+								   userInfo:nil
+									repeats:YES];
+	[super viewDidLoad];
+}
+
+- (void)updateCounter:(NSTimer *)theTimer {
+	counter += 1;
+	float elapsed = (float)(counter - basetime);
+	float total = [totalTime.text floatValue];
+	NSString *s = [[NSString alloc] initWithFormat:@"%2.0f", elapsed];
+	timeElapsed.text = s;
+	[s release];
+	float currProgress = elapsed / total;
+	timeProgress.progress = currProgress;
 }
 
 - (IBAction) doNextButton {
 	NSString *output = [webDisplayiPad stringByEvaluatingJavaScriptFromString:@"nextStep()"];
-	if (![output isEqualToString:@""]) {
+	if (output && ![output isEqualToString:@""]) {
 		notesArea.text = output;
 	}
 	[self updateProgress];
@@ -46,18 +67,24 @@
 
 - (void) updateProgress {
 	NSString *progress = [webDisplayiPad stringByEvaluatingJavaScriptFromString:@"getSlideProgress()"];
-	slideProgress.text = progress;
-	NSArray *currentTotal = [progress componentsSeparatedByString:@"/"];
-	float currSlide = [[currentTotal objectAtIndex:0] floatValue];
-	float totSlides = [[currentTotal objectAtIndex:1] floatValue];
-	float currProgress = currSlide / totSlides;
-	slideProgressBar.progress = currProgress;
+	if(progress && (![progress isEqualToString:@""])) {
+		slideProgress.text = progress;
+		NSArray *currentTotal = [progress componentsSeparatedByString:@"/"];
+		float currSlide = [[currentTotal objectAtIndex:0] floatValue];
+		float totSlides = [[currentTotal objectAtIndex:1] floatValue];
+		float currProgress = currSlide / totSlides;
+		slideProgressBar.progress = currProgress;
+	}
 }
 
 - (IBAction) doFooterButton {
 	[webDisplayiPad stringByEvaluatingJavaScriptFromString:@"toggleFooter()"];
 }
 
+- (IBAction) doResetTimer {
+	basetime = counter;
+	timeElapsed.text = @"0";
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
