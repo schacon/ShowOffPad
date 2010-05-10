@@ -320,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ShowOffPadAppDelegate.m</string>
+								<string>ShowOffPadViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,21 +328,21 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ShowOffPadAppDelegate.m</string>
+										<string>ShowOffPadViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>31CE74E311988622006C68D9</string>
+										<string>31CE751111988BE7006C68D9</string>
 										<key>history</key>
 										<array>
 											<string>31CE72A811986D07006C68D9</string>
-											<string>31CE7380119878A1006C68D9</string>
 											<string>31CE73BE11987F7F006C68D9</string>
-											<string>31CE73C811987FB5006C68D9</string>
-											<string>31CE73CE11987FCA006C68D9</string>
-											<string>31CE74D5119884F4006C68D9</string>
 											<string>31CE74D6119884F4006C68D9</string>
-											<string>31CE74D7119884F4006C68D9</string>
+											<string>31CE750D11988BE7006C68D9</string>
+											<string>31CE750E11988BE7006C68D9</string>
+											<string>31CE750F11988BE7006C68D9</string>
+											<string>31CE751011988BE7006C68D9</string>
+											<string>31CE74D5119884F4006C68D9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -543,9 +543,9 @@
 		<string>31CE72191198648C006C68D9</string>
 		<string>31CE721A1198648C006C68D9</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>311D6F7211922E4400C21AED</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>311D6F7211922E4400C21AED</string>
 		<string>/Users/schacon/Documents/ShowOffPad/ShowOffPad.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -565,6 +565,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -577,18 +579,16 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {500, 218}}</string>
+								<string>{{0, 0}, {1114, 365}}</string>
 								<key>RubberWindowFrame</key>
-								<string>928 680 500 500 0 0 2560 1418 </string>
+								<string>928 533 1114 647 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>218pt</string>
+							<string>365pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -603,9 +603,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 223}, {500, 236}}</string>
+								<string>{{0, 370}, {1114, 236}}</string>
 								<key>RubberWindowFrame</key>
-								<string>928 680 500 500 0 0 2560 1418 </string>
+								<string>928 533 1114 647 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -614,7 +614,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>459pt</string>
+					<string>606pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -637,11 +637,11 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>928 680 500 500 0 0 2560 1418 </string>
+			<string>928 533 1114 647 0 0 2560 1418 </string>
 			<key>WindowToolGUID</key>
 			<string>311D6F7211922E4400C21AED</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
