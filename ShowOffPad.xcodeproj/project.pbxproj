@@ -18,7 +18,6 @@
 		31CE739A119879D7006C68D9 /* ShowOffPadPresentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */; };
 		31CE759A1198A79A006C68D9 /* UITouchyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE75991198A79A006C68D9 /* UITouchyView.m */; };
 		31CE76F91199983F006C68D9 /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE76F81199983F006C68D9 /* RootController.m */; };
-		31CE76FB1199985C006C68D9 /* RootController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE76FA1199985C006C68D9 /* RootController.xib */; };
 		31CE772811999BF6006C68D9 /* NewFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE772711999BF6006C68D9 /* NewFormController.xib */; };
 		31CE773211999D50006C68D9 /* NewFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE773111999D50006C68D9 /* NewFormController.m */; };
 		31CE77CF1199A3CA006C68D9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE77C11199A3CA006C68D9 /* ASIAuthenticationDialog.m */; };
@@ -32,6 +31,7 @@
 		31CE77EA1199A40D006C68D9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CE77E91199A40D006C68D9 /* MobileCoreServices.framework */; };
 		31CE77EE1199A412006C68D9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CE77ED1199A412006C68D9 /* libz.1.2.3.dylib */; };
 		31CE77F11199A446006C68D9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE77F01199A446006C68D9 /* Reachability.m */; };
+		31CE792D1199BD35006C68D9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE792C1199BD35006C68D9 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		31CE75991198A79A006C68D9 /* UITouchyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITouchyView.m; sourceTree = "<group>"; };
 		31CE76F71199983F006C68D9 /* RootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
 		31CE76F81199983F006C68D9 /* RootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
-		31CE76FA1199985C006C68D9 /* RootController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootController.xib; sourceTree = "<group>"; };
 		31CE772711999BF6006C68D9 /* NewFormController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewFormController.xib; sourceTree = "<group>"; };
 		31CE773011999D50006C68D9 /* NewFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFormController.h; sourceTree = "<group>"; };
 		31CE773111999D50006C68D9 /* NewFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFormController.m; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		31CE77ED1199A412006C68D9 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		31CE77EF1199A446006C68D9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		31CE77F01199A446006C68D9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		31CE792C1199BD35006C68D9 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ShowOffPad_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOffPad_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShowOffPad-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShowOffPad-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,8 +160,8 @@
 				2899E5210DE3E06400AC0155 /* ShowOffPadViewController.xib */,
 				8D1107310486CEB800E47090 /* ShowOffPad-Info.plist */,
 				31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */,
-				31CE76FA1199985C006C68D9 /* RootController.xib */,
 				31CE772711999BF6006C68D9 /* NewFormController.xib */,
+				31CE792C1199BD35006C68D9 /* MainWindow.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -244,8 +244,8 @@
 			files = (
 				2899E5220DE3E06400AC0155 /* ShowOffPadViewController.xib in Resources */,
 				31CE739A119879D7006C68D9 /* ShowOffPadPresentController.xib in Resources */,
-				31CE76FB1199985C006C68D9 /* RootController.xib in Resources */,
 				31CE772811999BF6006C68D9 /* NewFormController.xib in Resources */,
+				31CE792D1199BD35006C68D9 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

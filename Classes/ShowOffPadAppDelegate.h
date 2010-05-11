@@ -18,13 +18,15 @@
     RootController *rootController;
     ShowOffPadViewController *viewController;
     ShowOffPadPresentController *presentController;
+	UISplitViewController *splitViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UIWindow *extWindow;
-@property (nonatomic, retain) IBOutlet ShowOffPadViewController *viewController;
-@property (nonatomic, retain) IBOutlet ShowOffPadPresentController *presentController;
-@property (nonatomic, retain) IBOutlet RootController *rootController;
+@property (nonatomic, retain) ShowOffPadViewController *viewController;
+@property (nonatomic, retain) ShowOffPadPresentController *presentController;
+@property (nonatomic, retain) RootController *rootController;
+@property (nonatomic, retain) IBOutlet UISplitViewController *splitViewController;
 
 - (NSString *) ensurePresoPath;
 

@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface RootController : UIViewController {
-	UIBarButtonItem *newButton;
-	UIView *mainView;
+@interface RootController : UITableViewController <UISplitViewControllerDelegate> {
+	UISplitViewController *splitViewController;    
 }
 
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *newButton;
-@property (nonatomic, retain) IBOutlet UIView *mainView;
+@property (nonatomic, assign) IBOutlet UISplitViewController *splitViewController;
 
 @end

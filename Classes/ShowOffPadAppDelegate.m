@@ -76,8 +76,8 @@
 		NSLog(@"Error starting HTTP Server: %@", error);
 	}
 	*/
-	
-    [window addSubview:rootController.view];
+
+	[window addSubview:splitViewController.view];
     [window makeKeyAndVisible];
 
 	return YES;
