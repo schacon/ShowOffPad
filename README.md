@@ -1,4 +1,5 @@
-h2. ShowOffPad
+ShowOffPad
+==========
 
 iPad app to present ShowOff presentations from.  It will allow you to 
 sync a ShowOff presentation that is online to your iPad, then let you
@@ -12,7 +13,8 @@ Madden style. Boom!
 
 ![ShowOffPad Screen](http://img.skitch.com/20100511-qgujxhybg9hrk4usqx5myutra4.jpg)
 
-h2. ToDo
+ToDo
+==========
 
 * Presentation Sync 
 ** pull online presentations locally
