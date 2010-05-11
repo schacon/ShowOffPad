@@ -16,6 +16,12 @@ Madden style. Boom!
 ToDo
 ==========
 
-* Presentation Sync 
-** pull online presentations locally
-** switch to saved presentations
+Presentation Sync 
+
+* pull online presentations locally
+* switch to saved presentations
+
+Authoring
+
+* Edit saved presentations
+* Create new presentations
