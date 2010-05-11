@@ -13,6 +13,14 @@ presenter display, Madden style. Boom!
 
 ![ShowOffPad Screen](http://img.skitch.com/20100511-qgujxhybg9hrk4usqx5myutra4.jpg)
 
+* Status *
+
+I am close to giving up on this because view orientation is so messed up.
+If anyone knows iPad development and can figure out why the first view
+seems to load fine but the others load 90 degrees off depending on load
+order, I would greatly appreciate it.
+
+
 ToDo
 ==========
 

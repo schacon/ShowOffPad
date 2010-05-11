@@ -16,7 +16,11 @@
 @synthesize viewController, presentController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    	
+	
+	viewController = [[ShowOffPadViewController alloc] 
+						 initWithNibName:@"ShowOffPadViewController" 
+						 bundle:nil];
+	
 	//Code to detect if an external display is connected to the iPad.
 	NSLog(@"Number of screens: %d", [[UIScreen screens]count]);
 	
@@ -56,7 +60,6 @@
 		
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
-
 	
 	return YES;
 }
