@@ -9,17 +9,25 @@
 #import "ShowOffPadAppDelegate.h"
 #import "ShowOffPadViewController.h"
 #import "ShowOffPadPresentController.h"
+#import "NewFormController.h"
+#import "RootController.h"
 
 @implementation ShowOffPadAppDelegate
 
 @synthesize window, extWindow;
-@synthesize viewController, presentController;
+@synthesize viewController, presentController, rootController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     	
 	//Code to detect if an external display is connected to the iPad.
 	NSLog(@"Number of screens: %d", [[UIScreen screens]count]);
+
+	NSString *presoPath = [self ensurePresoPath];
 	
+	rootController = [[RootController alloc] 
+						 initWithNibName:@"RootController" 
+						 bundle:nil];
+		
 	presentController = [[ShowOffPadPresentController alloc] 
 						 initWithNibName:@"ShowOffPadPresentController" 
 						 bundle:nil];
@@ -54,12 +62,42 @@
 		extWindow.screen = external;
 	}	
 		
-    [window addSubview:viewController.view];
+	// start the server	
+	/*
+	httpServer = [HTTPServer new];
+	[httpServer setType:@"_http._tcp."];
+	[httpServer setConnectionClass:[ShowOffHTTPConnection class]];
+	[httpServer setDocumentRoot:[NSURL fileURLWithPath:presoPath]];
+	[httpServer setPort:8082];
+	
+	NSError *error;
+	if(![httpServer start:&error])
+	{
+		NSLog(@"Error starting HTTP Server: %@", error);
+	}
+	*/
+	
+    [window addSubview:rootController.view];
     [window makeKeyAndVisible];
 
-	
 	return YES;
 }
+
+- (NSString *) ensurePresoPath {
+	NSArray *paths;
+	NSString *presoPath = @"";
+	
+	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	presoPath = [NSString stringWithString:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"showoff"]];
+	[presoPath retain];
+	
+	BOOL isDir;
+	NSFileManager *fm = [NSFileManager defaultManager];
+	if (![fm fileExistsAtPath:presoPath isDirectory:&isDir] && isDir) {
+		[fm createDirectoryAtPath:presoPath attributes:nil];
+	}	
+	return presoPath;
+}	
 
 - (void)dealloc {
     [viewController release];

@@ -10,10 +10,12 @@
 
 @class ShowOffPadViewController;
 @class ShowOffPadPresentController;
+@class RootController;
 
 @interface ShowOffPadAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     UIWindow *extWindow;
+    RootController *rootController;
     ShowOffPadViewController *viewController;
     ShowOffPadPresentController *presentController;
 }
@@ -22,6 +24,9 @@
 @property (nonatomic, retain) UIWindow *extWindow;
 @property (nonatomic, retain) IBOutlet ShowOffPadViewController *viewController;
 @property (nonatomic, retain) IBOutlet ShowOffPadPresentController *presentController;
+@property (nonatomic, retain) IBOutlet RootController *rootController;
+
+- (NSString *) ensurePresoPath;
 
 @end
 
