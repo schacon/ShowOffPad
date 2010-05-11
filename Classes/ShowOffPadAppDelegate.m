@@ -18,20 +18,23 @@
 @synthesize viewController, presentController, rootController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    	
+
 	//Code to detect if an external display is connected to the iPad.
 	NSLog(@"Number of screens: %d", [[UIScreen screens]count]);
 
 	NSString *presoPath = [self ensurePresoPath];
-	
-	rootController = [[RootController alloc] 
-						 initWithNibName:@"RootController" 
-						 bundle:nil];
 		
+	viewController = [[ShowOffPadViewController alloc] 
+					  initWithNibName:@"ShowOffPadViewController" 
+					  bundle:nil];
+	
 	presentController = [[ShowOffPadPresentController alloc] 
 						 initWithNibName:@"ShowOffPadPresentController" 
 						 bundle:nil];
 	viewController.extDisplay = presentController;
+
+	[window addSubview:splitViewController.view];
+	[window makeKeyAndVisible];
 	
 	if([[UIScreen screens]count] > 1) //if there are more than 1 screens connected to the device
 	{
@@ -58,10 +61,16 @@
 
 		[extWindow addSubview:presentController.view];
 		[extWindow makeKeyAndVisible];
+
+		CGAffineTransform rotate = CGAffineTransformMakeRotation(M_PI/2.0);
+		[presentController.view setTransform:rotate];
+		CGRect contentRect = CGRectMake(0, 0, 1024, 768); 
+		presentController.view.bounds = contentRect; 
+		[presentController.view setCenter:CGPointMake(768/2, 1024/2)];
 		
 		extWindow.screen = external;
 	}	
-		
+	
 	// start the server	
 	/*
 	httpServer = [HTTPServer new];
@@ -77,10 +86,19 @@
 	}
 	*/
 
-	[window addSubview:splitViewController.view];
-    [window makeKeyAndVisible];
-
 	return YES;
+}
+
+- (void) showPresentation {
+	[window addSubview:viewController.view];
+	
+	CGAffineTransform rotate = CGAffineTransformMakeRotation(M_PI/2.0);
+	[viewController.view setTransform:rotate];
+	CGRect contentRect = CGRectMake(0, 0, 1000, 750); 
+	viewController.view.bounds = contentRect; 
+	[viewController.view setCenter:CGPointMake(768/2, 1024/2)];
+	
+	[window bringSubviewToFront:viewController.view];
 }
 
 - (NSString *) ensurePresoPath {

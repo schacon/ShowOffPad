@@ -45,7 +45,7 @@
 					<object class="IBUITextField" id="84846478">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{258, 148}, {397, 31}}</string>
+						<string key="NSFrame">{{100, 144}, {397, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -69,7 +69,7 @@
 					<object class="IBUILabel" id="197821724">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{178, 105}, {46, 21}}</string>
+						<string key="NSFrame">{{20, 101}, {46, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -88,14 +88,14 @@
 					<object class="IBUILabel" id="1022915572">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{104, 148}, {136, 21}}</string>
+						<string key="NSFrame">{{21, 144}, {45, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">Presentation URL</string>
+						<string key="IBUIText">URL</string>
 						<reference key="IBUITextColor" ref="458574400"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -104,7 +104,7 @@
 					<object class="IBUITextField" id="795094367">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{258, 100}, {397, 31}}</string>
+						<string key="NSFrame">{{100, 96}, {397, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -126,7 +126,7 @@
 					<object class="IBUIButton" id="805415177">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{258, 204}, {157, 37}}</string>
+						<string key="NSFrame">{{100, 200}, {157, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -155,7 +155,7 @@
 					<object class="IBUIActivityIndicatorView" id="394464785">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{258, 288}, {20, 20}}</string>
+						<string key="NSFrame">{{100, 284}, {20, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -165,7 +165,7 @@
 					<object class="IBUILabel" id="984477089">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{293, 287}, {416, 21}}</string>
+						<string key="NSFrame">{{135, 283}, {416, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -181,7 +181,7 @@
 					<object class="IBUIProgressView" id="403517737">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{258, 323}, {150, 9}}</string>
+						<string key="NSFrame">{{100, 319}, {150, 9}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -285,9 +285,9 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="84846478"/>
-							<reference ref="795094367"/>
-							<reference ref="1022915572"/>
 							<reference ref="197821724"/>
+							<reference ref="1022915572"/>
+							<reference ref="795094367"/>
 							<reference ref="805415177"/>
 							<reference ref="394464785"/>
 							<reference ref="984477089"/>

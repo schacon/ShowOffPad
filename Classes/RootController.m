@@ -8,17 +8,36 @@
 
 #import "RootController.h"
 #import "NewFormController.h"
+#import "ShowOffPadAppDelegate.h"
 
 @implementation RootController
 
-@synthesize splitViewController;
-
+@synthesize splitViewController, list;
 
 #pragma mark -
 #pragma mark Initial configuration
 
 - (void)viewDidLoad {
-    
+    // load available presentations
+	NSArray *paths;
+	NSString *presoPath = @"";
+	
+	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	presoPath = [NSString stringWithString:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"showoff"]];
+
+	NSLog(@"READ PROJECTS:%@", presoPath);
+	
+	BOOL isDir=NO;
+	[list release];
+	list = [[NSMutableArray alloc] init];
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	if ([fileManager fileExistsAtPath:presoPath isDirectory:&isDir] && isDir) {
+		NSEnumerator *e = [[fileManager directoryContentsAtPath:presoPath] objectEnumerator];
+		NSString *thisDir;
+		while ( (thisDir = [e nextObject]) ) {
+			[list addObject:thisDir];
+		}
+	}
     [super viewDidLoad];
 }
 
@@ -27,7 +46,13 @@
 #pragma mark Rotation support
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+	if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
+		return YES;
+	}
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+		return YES;
+	}
+	return NO;
 }
 
 #pragma mark -
@@ -35,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
     // Two sections, one for each detail view controller.
-    return 1;
+    return [list count] + 1;
 }
 
 
@@ -51,10 +76,11 @@
     
     // Set appropriate labels for the cells.
     if (indexPath.row == 0) {
-        cell.textLabel.text = @"First Detail View Controller";
+        cell.textLabel.text = @"Load New Presentation";
     }
     else {
-        cell.textLabel.text = @"Second Detail View Controller";
+		int theIndex = indexPath.row - 1;
+        cell.textLabel.text = [list objectAtIndex:theIndex];
     }
 	
     return cell;
@@ -65,25 +91,31 @@
 #pragma mark Table view selection
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    	
     /*
      Create and configure a new detail view controller appropriate for the selection.
      */
     NSUInteger row = indexPath.row;
     
-    UIViewController *detailViewController = nil;
-	
     if (row == 0) {
-        NewFormController *newFormController = [[NewFormController alloc] initWithNibName:@"NewFormController" bundle:nil];
-        detailViewController = newFormController;
-    }
+		/* We may one day want to show info on a preso, so we'll need to get back */
 		
-    // Update the split view controller's view controllers array.
-    NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, detailViewController, nil];
-    splitViewController.viewControllers = viewControllers;
-    [viewControllers release];
+		//UIViewController *detailViewController = nil;
+        //NewFormController *newFormController = [[NewFormController alloc] initWithNibName:@"NewFormController" bundle:nil];
+        //detailViewController = newFormController;
+		//[detailViewController release];
+	} else {
+		/* For now just switch to the presentation */
+		
+		// Update the split view controller's view controllers array.
+		//NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, detailViewController, nil];
+		//splitViewController.viewControllers = viewControllers;
+		//[viewControllers release];
+		
+		ShowOffPadAppDelegate *delegate = (ShowOffPadAppDelegate*)[[UIApplication sharedApplication] delegate];
+		[delegate showPresentation];
+	}
     		
-    [detailViewController release];
 }
 
 

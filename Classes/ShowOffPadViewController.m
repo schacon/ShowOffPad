@@ -17,7 +17,7 @@
 @synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
 @synthesize maddenToggle;
 
-- (void)viewDidLoad {
+- (void)viewDidLoad {	
 	//NSString *urlAddress = @"http://localhost:9090";
 	NSString *urlAddress = @"http://showofftest.heroku.com/";
 	

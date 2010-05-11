@@ -10,8 +10,10 @@
 
 @interface RootController : UITableViewController <UISplitViewControllerDelegate> {
 	UISplitViewController *splitViewController;    
+	NSMutableArray *list;
 }
 
 @property (nonatomic, assign) IBOutlet UISplitViewController *splitViewController;
+@property (retain) NSMutableArray *list;
 
 @end
