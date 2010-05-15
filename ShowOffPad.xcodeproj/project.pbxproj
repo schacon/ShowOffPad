@@ -17,6 +17,7 @@
 		31CE731611987723006C68D9 /* ShowOffPadPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE731511987723006C68D9 /* ShowOffPadPresentController.m */; };
 		31CE739A119879D7006C68D9 /* ShowOffPadPresentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */; };
 		31CE759A1198A79A006C68D9 /* UITouchyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE75991198A79A006C68D9 /* UITouchyView.m */; };
+		8C816E79119F513100F3B681 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C816E78119F513100F3B681 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		31CE75981198A79A006C68D9 /* UITouchyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouchyView.h; sourceTree = "<group>"; };
 		31CE75991198A79A006C68D9 /* UITouchyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITouchyView.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ShowOffPad_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOffPad_Prefix.pch; sourceTree = "<group>"; };
+		8C816E78119F513100F3B681 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShowOffPad-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShowOffPad-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C816E78119F513100F3B681 /* MainWindow.xib */,
 				2899E5210DE3E06400AC0155 /* ShowOffPadViewController.xib */,
 				8D1107310486CEB800E47090 /* ShowOffPad-Info.plist */,
 				31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */,
@@ -161,6 +164,7 @@
 			files = (
 				2899E5220DE3E06400AC0155 /* ShowOffPadViewController.xib in Resources */,
 				31CE739A119879D7006C68D9 /* ShowOffPadPresentController.xib in Resources */,
+				8C816E79119F513100F3B681 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
