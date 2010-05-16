@@ -128,6 +128,10 @@
 	}
 }
 
+- (IBAction)clearMadden:(id)sender {    
+    [touchyView clearMadden];    
+}
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {

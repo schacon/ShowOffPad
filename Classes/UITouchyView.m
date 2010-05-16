@@ -28,8 +28,12 @@
 
 - (void)setMaddenOff {
 	maddenOn = FALSE;
+    [self clearMadden];
+}
+
+- (void)clearMadden {
 	self.image = nil;
-	[myView mirrorMadden];
+	[myView mirrorMadden];    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

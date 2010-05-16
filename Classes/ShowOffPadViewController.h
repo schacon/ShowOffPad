@@ -51,6 +51,7 @@
 - (IBAction)doFooterButton;
 - (IBAction)doResetTimer;
 - (IBAction)doToggleMadden:(id) sender;
+- (IBAction)clearMadden:(id)sender;
 
 - (void)setScreenStatus;
 - (void)mirrorMadden;

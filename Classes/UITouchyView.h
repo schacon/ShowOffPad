@@ -23,5 +23,6 @@
 @property(assign, readwrite) BOOL mouseSwiped;
 
 - (void)setView:(ShowOffPadViewController *)theView;
+- (void)clearMadden;
 
 @end
