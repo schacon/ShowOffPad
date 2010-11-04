@@ -33,6 +33,7 @@
 
 - (void)clearMadden {
 	self.image = nil;
+	[myView mirrorMadden];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
