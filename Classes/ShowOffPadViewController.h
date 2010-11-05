@@ -46,12 +46,21 @@
 @property (nonatomic, retain) IBOutlet UITouchyView  *touchyView;
 @property (nonatomic, retain) IBOutlet UISwitch  *maddenToggle;
 
+@property (nonatomic, retain) IBOutlet UIButton *addNewButton;
+@property (nonatomic, retain) IBOutlet UIButton *switchPresoButton;
+@property (nonatomic, retain) IBOutlet UIButton *sectionMenuButton;
+
+
 - (IBAction)doNextButton;
 - (IBAction)doPrevButton;
 - (IBAction)doFooterButton;
 - (IBAction)doResetTimer;
 - (IBAction)doToggleMadden:(id) sender;
 - (IBAction)clearMadden:(id)sender;
+
+- (IBAction)doAddNewButton;
+- (IBAction)doSwitchPresoButton;
+- (IBAction)doSectionMenuButton;
 
 - (void)setScreenStatus;
 - (void)mirrorMadden;

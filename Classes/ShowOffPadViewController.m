@@ -14,6 +14,7 @@
 
 @synthesize webDisplayiPad, extDisplay;
 @synthesize nextButton, prevButton, footerButton, notesArea, slideProgress, timeElapsed;
+@synthesize addNewButton, switchPresoButton, sectionMenuButton;
 @synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
 @synthesize maddenToggle;
 
@@ -72,6 +73,18 @@
 	[s release];
 	float currProgress = elapsed / total;
 	timeProgress.progress = currProgress;
+}
+
+- (IBAction) doAddNewButton {
+	NSLog(@"Add New");
+}
+
+- (IBAction) doSwitchPresoButton {
+	NSLog(@"Switch Preso");
+}
+
+- (IBAction) doSectionMenuButton {
+	NSLog(@"Section Menu");
 }
 
 - (IBAction) doNextButton {
