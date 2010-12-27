@@ -44,7 +44,6 @@
 			return;
 		}
 		
-		lastPoint.y -= 20;
 	}
 
 }
@@ -56,7 +55,6 @@
 	if (maddenOn) {
 		mouseSwiped = YES;
 		
-		currentPoint.y -= 20;
 		
 		UIGraphicsBeginImageContext(self.frame.size);
 		[self.image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
