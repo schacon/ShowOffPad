@@ -8,6 +8,7 @@
 
 #import "ShowOffPadViewController.h"
 #import "ShowOffPadPresentController.h"
+#import "SectionViewController.h"
 #import "UITouchyView.h"
 
 @implementation ShowOffPadViewController
@@ -17,6 +18,7 @@
 @synthesize addNewButton, switchPresoButton, sectionMenuButton;
 @synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
 @synthesize maddenToggle;
+@synthesize popoverController;
 
 - (void)viewDidLoad {
 	//NSString *urlAddress = @"http://localhost:9090";
@@ -85,6 +87,18 @@
 
 - (IBAction) doSectionMenuButton {
 	NSLog(@"Section Menu");
+	SectionViewController* content = [[SectionViewController alloc] init];
+	UIPopoverController* aPopover = [[UIPopoverController alloc]
+									 initWithContentViewController:content];
+	aPopover.delegate = self;
+	[content release];
+	
+	// Store the popover in a custom property for later use.
+	self.popoverController = aPopover;
+	[aPopover release];
+	
+	[self.popoverController presentPopoverFromBarButtonItem:sender
+								   permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 - (IBAction) doNextButton {

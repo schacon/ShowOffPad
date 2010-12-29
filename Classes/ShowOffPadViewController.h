@@ -10,6 +10,7 @@
 #import "UITouchyView.h"
 
 @class ShowOffPadPresentController;
+@class UIPopoverControllerDelegate;
 
 @interface ShowOffPadViewController : UIViewController {
 	IBOutlet UIWebView *webDisplayiPad;
@@ -25,6 +26,7 @@
 	UIProgressView *timeProgress;
 	UILabel   *padStatus;
 	UISwitch  *maddenToggle;
+	UIPopoverController *popoverController;
 	UITouchyView *touchyView;
 	int counter;
 	int basetime;
@@ -32,6 +34,7 @@
 
 @property(nonatomic,retain) UIWebView *webDisplayiPad;
 @property(nonatomic,retain) ShowOffPadPresentController *extDisplay;
+@property(nonatomic,retain) UIPopoverController *popoverController;
 
 @property (nonatomic, retain) IBOutlet UIButton *nextButton;
 @property (nonatomic, retain) IBOutlet UIButton *prevButton;

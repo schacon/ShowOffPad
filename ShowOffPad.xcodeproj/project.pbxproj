@@ -17,6 +17,7 @@
 		31CE731611987723006C68D9 /* ShowOffPadPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE731511987723006C68D9 /* ShowOffPadPresentController.m */; };
 		31CE739A119879D7006C68D9 /* ShowOffPadPresentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */; };
 		31CE759A1198A79A006C68D9 /* UITouchyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE75991198A79A006C68D9 /* UITouchyView.m */; };
+		31ED0DF51284A19300015A97 /* SectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ED0DF41284A19300015A97 /* SectionViewController.m */; };
 		8C816E79119F513100F3B681 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C816E78119F513100F3B681 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowOffPadPresentController.xib; sourceTree = "<group>"; };
 		31CE75981198A79A006C68D9 /* UITouchyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITouchyView.h; sourceTree = "<group>"; };
 		31CE75991198A79A006C68D9 /* UITouchyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITouchyView.m; sourceTree = "<group>"; };
+		31ED0DF31284A19300015A97 /* SectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionViewController.h; sourceTree = "<group>"; };
+		31ED0DF41284A19300015A97 /* SectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionViewController.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ShowOffPad_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOffPad_Prefix.pch; sourceTree = "<group>"; };
 		8C816E78119F513100F3B681 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShowOffPad-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShowOffPad-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 				31CE731511987723006C68D9 /* ShowOffPadPresentController.m */,
 				31CE75981198A79A006C68D9 /* UITouchyView.h */,
 				31CE75991198A79A006C68D9 /* UITouchyView.m */,
+				31ED0DF31284A19300015A97 /* SectionViewController.h */,
+				31ED0DF41284A19300015A97 /* SectionViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				28D7ACF80DDB3853001CB0EB /* ShowOffPadViewController.m in Sources */,
 				31CE731611987723006C68D9 /* ShowOffPadPresentController.m in Sources */,
 				31CE759A1198A79A006C68D9 /* UITouchyView.m in Sources */,
+				31ED0DF51284A19300015A97 /* SectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
