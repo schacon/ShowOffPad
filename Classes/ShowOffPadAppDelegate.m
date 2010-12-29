@@ -16,6 +16,7 @@
 
 @synthesize window, extWindow;
 @synthesize viewController, presentController, rootController;
+@synthesize splitViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
@@ -43,9 +44,9 @@
 		for(int i = 0; i < [[[[UIScreen screens] objectAtIndex:1] availableModes]count]; i++)
 		{
 			UIScreenMode *current = [[[[UIScreen screens]objectAtIndex:1]availableModes]objectAtIndex:i];
-			if (!screenChoosen) {
-				bestScreenMode = current;
-			}
+            if (!screenChoosen) {
+                bestScreenMode = current;
+            }
 			if (current.size.width == 1024.0) {
 				bestScreenMode = current;
 			}
@@ -58,17 +59,11 @@
 		//Boom! Now the external display is set to the proper mode. We need to now set the screen of a new UIWindow to the external screen
 		//extWindow = [[UIWindow alloc] init];
 		extWindow = [[UIWindow alloc] initWithFrame:[external bounds]];
-
+		extWindow.screen = external;
+        
 		[extWindow addSubview:presentController.view];
 		[extWindow makeKeyAndVisible];
-
-		CGAffineTransform rotate = CGAffineTransformMakeRotation(M_PI/2.0);
-		[presentController.view setTransform:rotate];
-		CGRect contentRect = CGRectMake(0, 0, 1024, 768); 
-		presentController.view.bounds = contentRect; 
-		[presentController.view setCenter:CGPointMake(768/2, 1024/2)];
 		
-		extWindow.screen = external;
 	}	
 	
 	// start the server	
@@ -90,15 +85,12 @@
 }
 
 - (void) showPresentation {
-	[window addSubview:viewController.view];
-	
-	CGAffineTransform rotate = CGAffineTransformMakeRotation(M_PI/2.0);
-	[viewController.view setTransform:rotate];
-	CGRect contentRect = CGRectMake(0, 0, 1000, 750); 
-	viewController.view.bounds = contentRect; 
-	[viewController.view setCenter:CGPointMake(768/2, 1024/2)];
-	
-	[window bringSubviewToFront:viewController.view];
+    
+	CGRect contentRect = CGRectMake(0, 0, 1024, 748); 
+	viewController.view.frame = contentRect; 
+	[self.splitViewController.view addSubview:viewController.view];
+    
+	[self.splitViewController.view bringSubviewToFront:viewController.view];
 }
 
 - (NSString *) ensurePresoPath {
