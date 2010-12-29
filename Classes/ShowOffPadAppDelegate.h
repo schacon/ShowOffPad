@@ -21,6 +21,10 @@
 	UISplitViewController *splitViewController;
 }
 
+-(void)setupExternalScreen;
+-(void)screenDidChange:(NSNotification *)notification;
+-(void)screenDidDisconnect:(NSNotification *)notification;
+
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UIWindow *extWindow;
 @property (nonatomic, retain) ShowOffPadViewController *viewController;
