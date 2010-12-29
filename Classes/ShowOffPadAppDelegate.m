@@ -19,7 +19,8 @@
 @synthesize splitViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(screenDidConnect:) name:UIScreenDidConnectNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(screenDidDisconnect:) name:UIScreenDidDisconnectNotification object:nil];
 	//Code to detect if an external display is connected to the iPad.
 	NSLog(@"Number of screens: %d", [[UIScreen screens]count]);
 
@@ -36,35 +37,7 @@
 
 	[window addSubview:splitViewController.view];
 	[window makeKeyAndVisible];
-	
-	if([[UIScreen screens]count] > 1) //if there are more than 1 screens connected to the device
-	{
-		UIScreenMode *bestScreenMode;
-		BOOL screenChoosen = FALSE;
-		for(int i = 0; i < [[[[UIScreen screens] objectAtIndex:1] availableModes]count]; i++)
-		{
-			UIScreenMode *current = [[[[UIScreen screens]objectAtIndex:1]availableModes]objectAtIndex:i];
-            if (!screenChoosen) {
-                bestScreenMode = current;
-            }
-			if (current.size.width == 1024.0) {
-				bestScreenMode = current;
-			}
-		}
-		
-		//Now we have the highest mode. Turn the external display to use that mode.
-		UIScreen *external = [[UIScreen screens] objectAtIndex:1];
-		external.currentMode = bestScreenMode;
-		
-		//Boom! Now the external display is set to the proper mode. We need to now set the screen of a new UIWindow to the external screen
-		//extWindow = [[UIWindow alloc] init];
-		extWindow = [[UIWindow alloc] initWithFrame:[external bounds]];
-		extWindow.screen = external;
-        
-		[extWindow addSubview:presentController.view];
-		[extWindow makeKeyAndVisible];
-		
-	}	
+	[self setupExternalScreen];
 	
 	// start the server	
 	/*
@@ -108,6 +81,46 @@
 	}	
 	return presoPath;
 }	
+
+-(void)setupExternalScreen {
+    if([[UIScreen screens]count] > 1) //if there are more than 1 screens connected to the device
+	{
+		UIScreenMode *bestScreenMode;
+		BOOL screenChoosen = FALSE;
+		for(int i = 0; i < [[[[UIScreen screens] objectAtIndex:1] availableModes]count]; i++)
+		{
+			UIScreenMode *current = [[[[UIScreen screens]objectAtIndex:1]availableModes]objectAtIndex:i];
+            if (!screenChoosen) {
+                bestScreenMode = current;
+            }
+			if (current.size.width == 1024.0) {
+				bestScreenMode = current;
+			}
+		}
+		
+		//Now we have the highest mode. Turn the external display to use that mode.
+		UIScreen *external = [[UIScreen screens] objectAtIndex:1];
+		external.currentMode = bestScreenMode;
+		
+		//Boom! Now the external display is set to the proper mode. We need to now set the screen of a new UIWindow to the external screen
+		//extWindow = [[UIWindow alloc] init];
+		self.extWindow = [[[UIWindow alloc] initWithFrame:[external bounds]] autorelease];
+		self.extWindow.screen = external;
+        
+		[self.extWindow addSubview:self.presentController.view];
+		[self.extWindow makeKeyAndVisible];
+	}
+}
+
+#pragma mark -
+#pragma mark Screen Notifications
+-(void)screenDidDisconnect:(NSNotification *)notification {
+    self.extWindow = nil;
+}
+
+-(void)screenDidConnect:(NSNotification *)notification {
+    [self setupExternalScreen];
+}
 
 - (void)dealloc {
     [viewController release];

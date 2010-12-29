@@ -18,7 +18,6 @@
 	NSLog(@"Mofo Loaded");
 	
     [super viewDidLoad];
-    self.view.frame = CGRectMake(0, 0, 1024, 768);
 }
 
 // Override to allow orientations other than the default portrait orientation.
