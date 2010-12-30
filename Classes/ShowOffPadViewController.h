@@ -54,6 +54,7 @@
 
 - (void)setScreenStatus;
 - (void)mirrorMadden;
+- (void)populateNotes;
 
 - (NSString *) sendJs:(NSString *)command;
 

@@ -75,11 +75,16 @@
 }
 
 - (IBAction) doNextButton {
-	NSString *output = [self sendJs:@"nextStep()"];
-	if (output && ![output isEqualToString:@""]) {
+	[self sendJs:@"nextStep()"];
+	[self populateNotes];
+	[self updateProgress];
+}
+
+- (void)populateNotes {
+	NSString *output = [self.webDisplayiPad stringByEvaluatingJavaScriptFromString:@"getCurrentNotes()"];
+	if (output) {
 		notesArea.text = output;
 	}
-	[self updateProgress];
 }
 
 - (NSString *) sendJs:(NSString *)command {
@@ -92,10 +97,8 @@
 }
 
 - (IBAction) doPrevButton {
-	NSString *output = [self sendJs:@"prevStep()"];
-	if (![output isEqualToString:@""]) {
-		notesArea.text = output;
-	}
+	[self sendJs:@"prevStep()"];
+	[self populateNotes];
 	[self updateProgress];
 }
 
