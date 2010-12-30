@@ -25,6 +25,7 @@
 	UIProgressView *timeProgress;
 	UILabel   *padStatus;
 	UISwitch  *maddenToggle;
+	UIScrollView *notesScrollView;
 	UITouchyView *touchyView;
 	int counter;
 	int basetime;
@@ -45,6 +46,7 @@
 @property (nonatomic, retain) IBOutlet UILabel  *padStatus;
 @property (nonatomic, retain) IBOutlet UITouchyView  *touchyView;
 @property (nonatomic, retain) IBOutlet UISwitch  *maddenToggle;
+@property (nonatomic, retain) IBOutlet UIScrollView *notesScrollView;
 
 - (IBAction)doNextButton;
 - (IBAction)doPrevButton;

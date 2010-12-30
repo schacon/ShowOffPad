@@ -16,6 +16,7 @@
 @synthesize nextButton, prevButton, footerButton, notesArea, slideProgress, timeElapsed;
 @synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
 @synthesize maddenToggle;
+@synthesize notesScrollView;
 
 - (void)viewDidLoad {	
 	//NSString *urlAddress = @"http://localhost:9090";
@@ -83,8 +84,17 @@
 - (void)populateNotes {
 	NSString *output = [self.webDisplayiPad stringByEvaluatingJavaScriptFromString:@"getCurrentNotes()"];
 	if (output) {
-		notesArea.text = output;
+		self.notesArea.text = output;
 	}
+	CGSize notesSize = [self.notesArea.text sizeWithFont:self.notesArea.font constrainedToSize:CGSizeMake(self.notesScrollView.frame.size.width, 10000)];
+	float notesX = 0;
+	float notesY = 0;
+	if (notesSize.height < self.notesScrollView.frame.size.height) {
+		notesY = (self.notesScrollView.frame.size.height - notesSize.height)/2;
+		notesX = (self.notesScrollView.frame.size.width - notesSize.width)/2;
+	}
+	self.notesArea.frame = CGRectMake(notesX, notesY, notesSize.width, notesSize.height);
+	self.notesScrollView.contentSize = notesSize;
 }
 
 - (NSString *) sendJs:(NSString *)command {
@@ -156,6 +166,21 @@
 
 
 - (void)dealloc {
+    [prevButton release];
+    [padStatus release];
+    [touchyView release];
+    [timeProgress release];
+    [footerButton release];
+    [timeElapsed release];
+    [extDisplay release];
+    [slideProgress release];
+    [slideProgressBar release];
+    [webDisplayiPad release];
+    [nextButton release];
+    [totalTime release];
+    [notesArea release];
+    [maddenToggle release];
+    [notesScrollView release];
     [super dealloc];
 }
 
