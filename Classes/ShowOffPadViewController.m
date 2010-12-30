@@ -164,6 +164,11 @@
 	// e.g. self.myOutlet = nil;
 }
 
+#pragma mark -
+#pragma mark Web View Delegate
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+	[self populateNotes];
+}
 
 - (void)dealloc {
     [prevButton release];

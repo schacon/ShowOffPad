@@ -294,16 +294,16 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
-					<object class="IBUIScrollView" id="384515340">
+					<object class="IBUIScrollView" id="955257905">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">268</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUILabel" id="986875535">
-								<reference key="NSNextResponder" ref="384515340"/>
+								<reference key="NSNextResponder" ref="955257905"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrameSize">{707, 133}</string>
-								<reference key="NSSuperview" ref="384515340"/>
+								<reference key="NSSuperview" ref="955257905"/>
 								<reference key="IBUIBackgroundColor" ref="328041047"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -512,9 +512,17 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">notesScrollView</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="384515340"/>
+						<reference key="destination" ref="955257905"/>
 					</object>
 					<int key="connectionID">68</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="993381318"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">69</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -556,7 +564,7 @@
 							<reference ref="340155670"/>
 							<reference ref="161113133"/>
 							<reference ref="398357682"/>
-							<reference ref="384515340"/>
+							<reference ref="955257905"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -632,7 +640,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">67</int>
-						<reference key="object" ref="384515340"/>
+						<reference key="object" ref="955257905"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="986875535"/>
@@ -642,7 +650,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
 						<reference key="object" ref="986875535"/>
-						<reference key="parent" ref="384515340"/>
+						<reference key="parent" ref="955257905"/>
 					</object>
 				</object>
 			</object>
@@ -721,7 +729,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">68</int>
+			<int key="maxID">69</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
