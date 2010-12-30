@@ -18,6 +18,7 @@
 #pragma mark Initial configuration
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     // load available presentations
 	NSArray *paths;
 	NSString *presoPath = @"";
@@ -32,13 +33,12 @@
 	list = [[NSMutableArray alloc] init];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	if ([fileManager fileExistsAtPath:presoPath isDirectory:&isDir] && isDir) {
-		NSEnumerator *e = [[fileManager directoryContentsAtPath:presoPath] objectEnumerator];
+		NSEnumerator *e = [[fileManager contentsOfDirectoryAtPath:presoPath error:nil] objectEnumerator];
 		NSString *thisDir;
 		while ( (thisDir = [e nextObject]) ) {
 			[list addObject:thisDir];
 		}
 	}
-    [super viewDidLoad];
 }
 
 
@@ -100,10 +100,10 @@
     if (row == 0) {
 		/* We may one day want to show info on a preso, so we'll need to get back */
 		
-		//UIViewController *detailViewController = nil;
-        //NewFormController *newFormController = [[NewFormController alloc] initWithNibName:@"NewFormController" bundle:nil];
-        //detailViewController = newFormController;
-		//[detailViewController release];
+        NewFormController *newFormController = [[NewFormController alloc] initWithNibName:@"NewFormController" bundle:nil];
+        NSArray *viewControllers = [NSArray arrayWithObjects:self.navigationController, newFormController, nil];
+		self.splitViewController.viewControllers = viewControllers;
+		[newFormController release];
 	} else {
 		/* For now just switch to the presentation */
 		

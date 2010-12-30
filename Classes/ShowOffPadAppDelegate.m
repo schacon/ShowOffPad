@@ -26,17 +26,25 @@
 
 	NSString *presoPath = [self ensurePresoPath];
 		
-	viewController = [[ShowOffPadViewController alloc] 
+	self.viewController = [[[ShowOffPadViewController alloc] 
 					  initWithNibName:@"ShowOffPadViewController" 
-					  bundle:nil];
+					  bundle:nil] autorelease];
 	
-	presentController = [[ShowOffPadPresentController alloc] 
+	self.presentController = [[[ShowOffPadPresentController alloc] 
 						 initWithNibName:@"ShowOffPadPresentController" 
-						 bundle:nil];
+						 bundle:nil] autorelease];
 	viewController.extDisplay = presentController;
 
 	[window addSubview:splitViewController.view];
 	[window makeKeyAndVisible];
+    
+    //This is a hack for some reason when I load the app with home button right the new form controller doesn't display unless I do this
+    NewFormController *newFormController = [[NewFormController alloc] initWithNibName:@"NewFormController" bundle:nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:[self.splitViewController.viewControllers objectAtIndex:0], newFormController, nil];
+    self.splitViewController.viewControllers = viewControllers;
+    [newFormController release];
+    
+    
 	[self setupExternalScreen];
 	
 	// start the server	
@@ -72,12 +80,12 @@
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	presoPath = [NSString stringWithString:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"showoff"]];
-	[presoPath retain];
 	
 	BOOL isDir;
 	NSFileManager *fm = [NSFileManager defaultManager];
 	if (![fm fileExistsAtPath:presoPath isDirectory:&isDir] && isDir) {
-		[fm createDirectoryAtPath:presoPath attributes:nil];
+        NSError *error;
+        [fm createDirectoryAtPath:presoPath withIntermediateDirectories:YES attributes:nil error:&error];
 	}	
 	return presoPath;
 }	
