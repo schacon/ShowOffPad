@@ -10,6 +10,7 @@
 #import "ShowOffPadPresentController.h"
 #import "UITouchyView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ShowOffPadAppDelegate.h"
 
 @implementation ShowOffPadViewController
 
@@ -137,6 +138,11 @@
 
 - (IBAction) doFooterButton {
 	[self sendJs:@"toggleFooter()"];
+}
+
+- (IBAction)closeAction {
+	ShowOffPadAppDelegate *delegate = (ShowOffPadAppDelegate*)[[UIApplication sharedApplication] delegate];
+	[delegate dismisPresentation];
 }
 
 - (IBAction) doResetTimer {

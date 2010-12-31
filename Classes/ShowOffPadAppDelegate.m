@@ -65,13 +65,17 @@
 	return YES;
 }
 
-- (void) showPresentation {
+- (void)showPresentation {
     
 	CGRect contentRect = CGRectMake(0, 0, 1024, 748); 
 	viewController.view.frame = contentRect; 
 	[self.splitViewController.view addSubview:viewController.view];
     
 	[self.splitViewController.view bringSubviewToFront:viewController.view];
+}
+
+- (void)dismisPresentation {
+	[self.viewController.view removeFromSuperview];
 }
 
 - (NSString *) ensurePresoPath {

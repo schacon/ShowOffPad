@@ -24,7 +24,8 @@
 -(void)setupExternalScreen;
 -(void)screenDidConnect:(NSNotification *)notification;
 -(void)screenDidDisconnect:(NSNotification *)notification;
-- (void) showPresentation;
+- (void)showPresentation;
+- (void)dismisPresentation;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UIWindow *extWindow;

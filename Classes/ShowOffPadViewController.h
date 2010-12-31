@@ -69,6 +69,7 @@
 - (IBAction)doNextButton;
 - (IBAction)doPrevButton;
 - (IBAction)doFooterButton;
+- (IBAction)closeAction;
 - (IBAction)doResetTimer;
 - (IBAction)doToggleMadden:(id) sender;
 
