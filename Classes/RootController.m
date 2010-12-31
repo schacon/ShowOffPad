@@ -91,6 +91,7 @@
 #pragma mark Table view selection
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
     	
     /*
      Create and configure a new detail view controller appropriate for the selection.
