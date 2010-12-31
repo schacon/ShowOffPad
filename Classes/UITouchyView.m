@@ -14,6 +14,7 @@
 @synthesize myView;
 @synthesize lastPoint;
 @synthesize maddenOn, mouseSwiped;
+@synthesize currentColor;
 
 - (void)setView:(ShowOffPadViewController *)theView {
 	myView = theView;
@@ -60,7 +61,7 @@
 		[self.image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
 		CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
 		CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0);
-		CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 1.0);
+		CGContextSetStrokeColorWithColor(UIGraphicsGetCurrentContext(), [self.currentColor CGColor]);
 		CGContextBeginPath(UIGraphicsGetCurrentContext());
 		CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
 		CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
@@ -122,6 +123,12 @@
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+}
+
+-(void)dealloc {
+    [myView release];
+    [currentColor release];
+	[super dealloc];
 }
 
 @end

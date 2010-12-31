@@ -15,12 +15,14 @@
 	CGPoint lastPoint;
 	BOOL maddenOn;
 	BOOL mouseSwiped;
+	UIColor *currentColor;
 }
 
 @property(assign, readwrite) ShowOffPadViewController *myView;
 @property(assign, readwrite) CGPoint lastPoint;
 @property(assign, readwrite) BOOL maddenOn;
 @property(assign, readwrite) BOOL mouseSwiped;
+@property (nonatomic, retain) UIColor *currentColor;
 
 - (void)setView:(ShowOffPadViewController *)theView;
 - (void)setMaddenOn;

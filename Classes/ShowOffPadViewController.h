@@ -26,6 +26,15 @@
 	UILabel   *padStatus;
 	UISwitch  *maddenToggle;
 	UIScrollView *notesScrollView;
+	UIView *blueSwatch;
+	UIView *redSwatch;
+	UIView *orangeSwatch;
+	UIView *purpleSwatch;
+	UIView *greenSwatch;
+	UIView *yellowSwatch;
+	UIView *swatchSelector;
+	UIView *swatchHolder;
+	UIView *swatchSelectorInside;
 	UITouchyView *touchyView;
 	int counter;
 	int basetime;
@@ -47,6 +56,15 @@
 @property (nonatomic, retain) IBOutlet UITouchyView  *touchyView;
 @property (nonatomic, retain) IBOutlet UISwitch  *maddenToggle;
 @property (nonatomic, retain) IBOutlet UIScrollView *notesScrollView;
+@property (nonatomic, retain) IBOutlet UIView *blueSwatch;
+@property (nonatomic, retain) IBOutlet UIView *redSwatch;
+@property (nonatomic, retain) IBOutlet UIView *orangeSwatch;
+@property (nonatomic, retain) IBOutlet UIView *purpleSwatch;
+@property (nonatomic, retain) IBOutlet UIView *greenSwatch;
+@property (nonatomic, retain) IBOutlet UIView *yellowSwatch;
+@property (nonatomic, retain) IBOutlet UIView *swatchSelector;
+@property (nonatomic, retain) IBOutlet UIView *swatchHolder;
+@property (nonatomic, retain) IBOutlet UIView *swatchSelectorInside;
 
 - (IBAction)doNextButton;
 - (IBAction)doPrevButton;
@@ -57,6 +75,8 @@
 - (void)setScreenStatus;
 - (void)mirrorMadden;
 - (void)populateNotes;
+- (void)setupSwatches;
+-(void)setSwatchAsDefault:(UIView *)view;
 
 - (NSString *) sendJs:(NSString *)command;
 

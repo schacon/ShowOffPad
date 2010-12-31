@@ -9,6 +9,7 @@
 #import "ShowOffPadViewController.h"
 #import "ShowOffPadPresentController.h"
 #import "UITouchyView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ShowOffPadViewController
 
@@ -17,8 +18,18 @@
 @synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
 @synthesize maddenToggle;
 @synthesize notesScrollView;
+@synthesize blueSwatch;
+@synthesize redSwatch;
+@synthesize orangeSwatch;
+@synthesize purpleSwatch;
+@synthesize greenSwatch;
+@synthesize yellowSwatch;
+@synthesize swatchSelector;
+@synthesize swatchHolder;
+@synthesize swatchSelectorInside;
 
 - (void)viewDidLoad {	
+	[super viewDidLoad];
 	//NSString *urlAddress = @"http://localhost:9090";
 	NSString *urlAddress = @"http://showofftest.heroku.com/";
 	
@@ -43,7 +54,7 @@
 									repeats:YES];
 	[self setScreenStatus];
 	
-	[super viewDidLoad];
+	[self setupSwatches];
 }
 
 - (void)setScreenStatus {
@@ -141,6 +152,34 @@
 	}
 }
 
+- (void)setupSwatches {
+	self.swatchHolder.layer.cornerRadius = 8;
+	self.swatchSelector.layer.cornerRadius = 6;
+	self.swatchSelectorInside.layer.cornerRadius = 6;
+	self.redSwatch.backgroundColor = [UIColor redColor];
+	self.blueSwatch.backgroundColor = [UIColor blueColor];
+	self.purpleSwatch.backgroundColor = [UIColor purpleColor];
+	self.greenSwatch.backgroundColor = [UIColor greenColor];
+	self.yellowSwatch.backgroundColor = [UIColor yellowColor];
+	self.orangeSwatch.backgroundColor = [UIColor orangeColor];
+	for (UIView *swatchView in [NSArray arrayWithObjects:self.redSwatch, self.blueSwatch, self.purpleSwatch, self.greenSwatch, self.yellowSwatch, self.orangeSwatch, nil]) {
+		UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(swatchSelected:)];
+		[swatchView addGestureRecognizer:tapRecognizer];
+		[tapRecognizer release];
+		swatchView.layer.cornerRadius = 6;
+	}
+	[self setSwatchAsDefault:self.redSwatch];
+}
+
+-(void)swatchSelected:(UITapGestureRecognizer *)recognizer {
+	[self setSwatchAsDefault:recognizer.view];
+}
+
+-(void)setSwatchAsDefault:(UIView *)view {
+	self.touchyView.currentColor = view.backgroundColor;
+	self.swatchSelector.frame = CGRectMake(view.frame.origin.x - 6, view.frame.origin.y - 6, self.swatchSelector.frame.size.width, self.swatchSelector.frame.size.height);
+}
+
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
@@ -186,6 +225,15 @@
     [notesArea release];
     [maddenToggle release];
     [notesScrollView release];
+    [greenSwatch release];
+    [blueSwatch release];
+    [purpleSwatch release];
+    [yellowSwatch release];
+    [redSwatch release];
+    [swatchHolder release];
+    [orangeSwatch release];
+    [swatchSelector release];
+    [swatchSelectorInside release];
     [super dealloc];
 }
 
