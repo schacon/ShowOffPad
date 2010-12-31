@@ -11,7 +11,7 @@
 
 @class ShowOffPadPresentController;
 
-@interface ShowOffPadViewController : UIViewController <UIWebViewDelegate> {
+@interface ShowOffPadViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
 	IBOutlet UIWebView *webDisplayiPad;
 	ShowOffPadPresentController *extDisplay;
 	UIButton *nextButton;

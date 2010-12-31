@@ -141,8 +141,9 @@
 }
 
 - (IBAction)closeAction {
-	ShowOffPadAppDelegate *delegate = (ShowOffPadAppDelegate*)[[UIApplication sharedApplication] delegate];
-	[delegate dismisPresentation];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Close presentation?" message:@"Clicking 'Yes' will stop the presentation" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+	[alert show];
+	[alert release];
 }
 
 - (IBAction) doResetTimer {
@@ -213,6 +214,15 @@
 #pragma mark Web View Delegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 	[self populateNotes];
+}
+
+#pragma mark -
+#pragma mark Alert View Delegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 1) {
+		ShowOffPadAppDelegate *delegate = (ShowOffPadAppDelegate*)[[UIApplication sharedApplication] delegate];
+		[delegate dismisPresentation];
+	}
 }
 
 - (void)dealloc {
