@@ -32,6 +32,10 @@
 		31CE77EE1199A412006C68D9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CE77ED1199A412006C68D9 /* libz.1.2.3.dylib */; };
 		31CE77F11199A446006C68D9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE77F01199A446006C68D9 /* Reachability.m */; };
 		31CE792D1199BD35006C68D9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE792C1199BD35006C68D9 /* MainWindow.xib */; };
+		777DDB7112D11DD300AF4026 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 777DDB4012D11DD300AF4026 /* LICENSE */; };
+		777DDB7212D11DD300AF4026 /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = 777DDB4112D11DD300AF4026 /* mongoose.c */; };
+		777DDB7312D11DD300AF4026 /* MongooseDaemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 777DDB4412D11DD300AF4026 /* MongooseDaemon.m */; };
+		777DDB7412D11DD300AF4026 /* README.rdoc in Resources */ = {isa = PBXBuildFile; fileRef = 777DDB4512D11DD300AF4026 /* README.rdoc */; };
 		77E9258912CD858700DF73A1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77E9258812CD858700DF73A1 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +84,12 @@
 		31CE77F01199A446006C68D9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		31CE792C1199BD35006C68D9 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ShowOffPad_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOffPad_Prefix.pch; sourceTree = "<group>"; };
+		777DDB4012D11DD300AF4026 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		777DDB4112D11DD300AF4026 /* mongoose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mongoose.c; sourceTree = "<group>"; };
+		777DDB4212D11DD300AF4026 /* mongoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mongoose.h; sourceTree = "<group>"; };
+		777DDB4312D11DD300AF4026 /* MongooseDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MongooseDaemon.h; sourceTree = "<group>"; };
+		777DDB4412D11DD300AF4026 /* MongooseDaemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MongooseDaemon.m; sourceTree = "<group>"; };
+		777DDB4512D11DD300AF4026 /* README.rdoc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.rdoc; sourceTree = "<group>"; };
 		77E9258812CD858700DF73A1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* ShowOffPad-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShowOffPad-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +116,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				777DDAF012D11DD300AF4026 /* MongooseDaemon */,
 				1D3623240D0F684500981E51 /* ShowOffPadAppDelegate.h */,
 				1D3623250D0F684500981E51 /* ShowOffPadAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* ShowOffPadViewController.h */,
@@ -204,6 +215,19 @@
 			path = HttpClient;
 			sourceTree = "<group>";
 		};
+		777DDAF012D11DD300AF4026 /* MongooseDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				777DDB4012D11DD300AF4026 /* LICENSE */,
+				777DDB4112D11DD300AF4026 /* mongoose.c */,
+				777DDB4212D11DD300AF4026 /* mongoose.h */,
+				777DDB4312D11DD300AF4026 /* MongooseDaemon.h */,
+				777DDB4412D11DD300AF4026 /* MongooseDaemon.m */,
+				777DDB4512D11DD300AF4026 /* README.rdoc */,
+			);
+			path = MongooseDaemon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +281,8 @@
 				31CE739A119879D7006C68D9 /* ShowOffPadPresentController.xib in Resources */,
 				31CE772811999BF6006C68D9 /* NewFormController.xib in Resources */,
 				31CE792D1199BD35006C68D9 /* MainWindow.xib in Resources */,
+				777DDB7112D11DD300AF4026 /* LICENSE in Resources */,
+				777DDB7412D11DD300AF4026 /* README.rdoc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +307,8 @@
 				31CE77D31199A3CA006C68D9 /* ASINetworkQueue.m in Sources */,
 				31CE77D41199A3CA006C68D9 /* ASINSStringAdditions.m in Sources */,
 				31CE77F11199A446006C68D9 /* Reachability.m in Sources */,
+				777DDB7212D11DD300AF4026 /* mongoose.c in Sources */,
+				777DDB7312D11DD300AF4026 /* MongooseDaemon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

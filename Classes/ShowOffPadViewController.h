@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UITouchyView.h"
+#import "MongooseDaemon.h"
 
 @class ShowOffPadPresentController;
 
@@ -36,6 +37,7 @@
 	UIView *swatchHolder;
 	UIView *swatchSelectorInside;
 	UITouchyView *touchyView;
+	MongooseDaemon *httpServer;
 	int counter;
 	int basetime;
 }
@@ -54,6 +56,7 @@
 @property (nonatomic, retain) IBOutlet UIProgressView  *timeProgress;
 @property (nonatomic, retain) IBOutlet UILabel  *padStatus;
 @property (nonatomic, retain) IBOutlet UITouchyView  *touchyView;
+@property (nonatomic, retain) MongooseDaemon *httpServer;
 @property (nonatomic, retain) IBOutlet UISwitch  *maddenToggle;
 @property (nonatomic, retain) IBOutlet UIScrollView *notesScrollView;
 @property (nonatomic, retain) IBOutlet UIView *blueSwatch;
@@ -77,6 +80,7 @@
 - (void)mirrorMadden;
 - (void)populateNotes;
 - (void)setupSwatches;
+-(void)loadPresentation:(NSString *)directory;
 -(void)setSwatchAsDefault:(UIView *)view;
 
 - (NSString *) sendJs:(NSString *)command;

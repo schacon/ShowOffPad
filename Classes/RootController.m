@@ -114,7 +114,7 @@
 		//[viewControllers release];
 		
 		ShowOffPadAppDelegate *delegate = (ShowOffPadAppDelegate*)[[UIApplication sharedApplication] delegate];
-		[delegate showPresentation];
+		[delegate showPresentation:[list objectAtIndex:indexPath.row-1]];
 	}
     		
 }

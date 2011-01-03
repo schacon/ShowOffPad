@@ -17,6 +17,7 @@
 @synthesize webDisplayiPad, extDisplay;
 @synthesize nextButton, prevButton, footerButton, notesArea, slideProgress, timeElapsed;
 @synthesize slideProgressBar, timeProgress, totalTime, padStatus, touchyView;
+@synthesize httpServer;
 @synthesize maddenToggle;
 @synthesize notesScrollView;
 @synthesize blueSwatch;
@@ -31,23 +32,27 @@
 
 - (void)viewDidLoad {	
 	[super viewDidLoad];
-	//NSString *urlAddress = @"http://localhost:9090";
-	NSString *urlAddress = @"http://showofftest.heroku.com/";
-	
-	//Create a URL object.
-	NSURL *url = [NSURL URLWithString:urlAddress];
+}
+
+-(void)loadPresentation:(NSString *)directory {
+	if (self.httpServer != nil) {
+		[self.httpServer stopMongooseDaemon];
+	}
+	self.httpServer = [[[MongooseDaemon alloc] init] autorelease];
+	[self.httpServer startMongooseDaemon:@"8080" documentRoot:directory];
+	NSURL *url = [NSURL URLWithString:@"http://localhost:8080/index.html"];
 	//URL Requst Object
 	NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 	
 	//Load the request in the UIWebView.
 	[webDisplayiPad loadRequest:requestObj];
 	[extDisplay.mainView loadRequest:requestObj];
-
+	
 	counter = 0;
 	basetime = 0;
-
+	
 	[touchyView setView:self];
-	 
+	
 	[NSTimer scheduledTimerWithTimeInterval:60.0f
 									 target:self
 								   selector:@selector(updateCounter:)
@@ -250,6 +255,7 @@
     [orangeSwatch release];
     [swatchSelector release];
     [swatchSelectorInside release];
+    [httpServer release];
     [super dealloc];
 }
 

@@ -83,6 +83,9 @@
 	aData = [response dataUsingEncoding: NSASCIIStringEncoding];
 	
 	NSString *base = [[request url] path];
+	if ([base isEqualToString:@"/index"]) {
+		base = @"/index.html";
+	}
 	NSString *filePath = [presBasePath stringByAppendingPathComponent:base];
 	NSError *error;
 	NSFileManager *fm = [NSFileManager defaultManager];

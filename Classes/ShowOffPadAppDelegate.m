@@ -65,10 +65,15 @@
 	return YES;
 }
 
-- (void)showPresentation {
-    
+- (void)showPresentation:(NSString *)directory {
+	NSArray *paths;
+	NSString *presoPath = @"";
+	
+	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	presoPath = [[[paths objectAtIndex:0] stringByAppendingPathComponent:@"showoff"] stringByAppendingPathComponent:directory];
 	CGRect contentRect = CGRectMake(0, 0, 1024, 748); 
-	viewController.view.frame = contentRect; 
+	self.viewController.view.frame = contentRect; 
+	[self.viewController loadPresentation:presoPath];
 	[self.splitViewController.view addSubview:viewController.view];
     
 	[self.splitViewController.view bringSubviewToFront:viewController.view];
