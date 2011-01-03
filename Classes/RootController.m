@@ -85,7 +85,7 @@
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
     // Two sections, one for each detail view controller.
-    return [list count] + 1;
+    return [list count];
 }
 
 
@@ -99,14 +99,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Set appropriate labels for the cells.
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"Load New Presentation";
-    }
-    else {
-		int theIndex = indexPath.row - 1;
-        cell.textLabel.text = [list objectAtIndex:theIndex];
-    }
+	cell.textLabel.text = [list objectAtIndex:indexPath.row];
 	
     return cell;
 }
@@ -140,14 +133,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    	
-    /*
-     Create and configure a new detail view controller appropriate for the selection.
-     */
-    NSUInteger row = indexPath.row;
 		
 	ShowOffPadAppDelegate *delegate = (ShowOffPadAppDelegate*)[[UIApplication sharedApplication] delegate];
-	[delegate showPresentation:[list objectAtIndex:indexPath.row-1]];
+	[delegate showPresentation:[list objectAtIndex:indexPath.row]];
     		
 }
 
