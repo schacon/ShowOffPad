@@ -139,6 +139,7 @@
 	importActivity.hidden = TRUE;
 	importProgress.hidden = TRUE;
 	importStatus.hidden = TRUE;
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"PresentationDownloaded" object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

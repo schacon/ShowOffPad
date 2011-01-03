@@ -13,6 +13,8 @@
 	NSMutableArray *list;
 }
 
+-(void) setupList;
+
 @property (nonatomic, assign) IBOutlet UISplitViewController *splitViewController;
 @property (retain) NSMutableArray *list;
 

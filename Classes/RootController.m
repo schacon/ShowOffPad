@@ -19,24 +19,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // load available presentations
+	[self setupList];
+	[[NSNotificationCenter defaultCenter] addObserverForName:@"PresentationDownloaded" 
+													  object:nil 
+													   queue:[NSOperationQueue mainQueue] 
+												  usingBlock:^(NSNotification *notification) {
+		[self setupList];
+		[(UITableView *)self.view reloadData];
+	}];
+}
+
+-(void) setupList {
 	NSArray *paths;
 	NSString *presoPath = @"";
 	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	presoPath = [NSString stringWithString:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"showoff"]];
-
+	
 	NSLog(@"READ PROJECTS:%@", presoPath);
 	
 	BOOL isDir=NO;
-	[list release];
-	list = [[NSMutableArray alloc] init];
+	self.list = [NSMutableArray array];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	if ([fileManager fileExistsAtPath:presoPath isDirectory:&isDir] && isDir) {
 		NSEnumerator *e = [[fileManager contentsOfDirectoryAtPath:presoPath error:nil] objectEnumerator];
 		NSString *thisDir;
 		while ( (thisDir = [e nextObject]) ) {
-			[list addObject:thisDir];
+			[self.list addObject:thisDir];
 		}
 	}
 }
