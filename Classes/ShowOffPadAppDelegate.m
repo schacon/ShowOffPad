@@ -83,6 +83,25 @@
 	[self.viewController.view removeFromSuperview];
 }
 
+- (BOOL)deletePresentation:(NSString *)directory {
+	NSArray *paths;
+	NSString *presoPath = @"";
+	
+	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	presoPath = [[[paths objectAtIndex:0] stringByAppendingPathComponent:@"showoff"] stringByAppendingPathComponent:directory];
+	
+	BOOL isDir;
+	NSFileManager *fm = [NSFileManager defaultManager];
+	if ([fm fileExistsAtPath:presoPath isDirectory:&isDir] && isDir) {
+        NSError *error;
+        [fm removeItemAtPath:presoPath error:&error];
+		if (error) {
+			return NO;
+		}
+	}
+	return YES;
+}
+
 - (NSString *) ensurePresoPath {
 	NSArray *paths;
 	NSString *presoPath = @"";

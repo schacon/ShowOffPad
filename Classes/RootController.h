@@ -13,6 +13,9 @@
 	NSMutableArray *list;
 }
 
+-(IBAction)addPresentation;
+-(IBAction)editPresentation;
+-(void)doneEditing;
 -(void) setupList;
 
 @property (nonatomic, assign) IBOutlet UISplitViewController *splitViewController;

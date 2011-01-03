@@ -26,6 +26,7 @@
 -(void)screenDidDisconnect:(NSNotification *)notification;
 - (void)showPresentation:(NSString *)directory;
 - (void)dismisPresentation;
+- (BOOL)deletePresentation:(NSString *)directory;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UIWindow *extWindow;
