@@ -11,16 +11,7 @@ through the slides you are, how much time has elapsed and notes for each
 slide. It also has a drawing mode so you can draw directly onto the 
 presenter display, Madden style. Boom!
 
-![ShowOffPad Screen](http://img.skitch.com/20100511-qgujxhybg9hrk4usqx5myutra4.jpg)
-
-Status 
-============
-
-I am close to giving up on this because view orientation is so messed up.
-If anyone knows iPad development and can figure out why the first view
-seems to load fine but the others load 90 degrees off depending on load
-order, I would greatly appreciate it.
-
+![ShowOffPad Screen](https://img.skitch.com/20110318-meb8xf31g6gadftea3phq4nmtp.png)
 
 ToDo
 ==========
@@ -29,3 +20,5 @@ Authoring
 
 * Edit saved presentations
 * Create new presentations
+* Publish API so other HTML-based presos could use it
+* Get it on the app store
