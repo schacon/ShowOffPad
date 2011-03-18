@@ -39,8 +39,8 @@
 		[self.httpServer stopMongooseDaemon];
 	}
 	self.httpServer = [[[MongooseDaemon alloc] init] autorelease];
-	[self.httpServer startMongooseDaemon:@"8080" documentRoot:directory];
-	NSURL *url = [NSURL URLWithString:@"http://localhost:8080/index.html"];
+	[self.httpServer startMongooseDaemon:@"8085" documentRoot:directory];
+	NSURL *url = [NSURL URLWithString:@"http://localhost:8085/index.html"];
 	//URL Requst Object
 	NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
 	
