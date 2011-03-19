@@ -93,6 +93,7 @@
 }
 
 - (IBAction) doNextButton {
+    touchyView.image = nil;
 	[self sendJs:@"nextStep()"];
 	[self populateNotes];
 	[self updateProgress];
