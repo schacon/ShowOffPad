@@ -14,7 +14,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2899E5220DE3E06400AC0155 /* ShowOffPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ShowOffPadViewController.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ShowOffPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ShowOffPadViewController.m */; };
-		314FB4121335760700C1068F /* chacon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 314FB4111335760700C1068F /* chacon.jpg */; };
+		314FB414133578AE00C1068F /* scottocat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 314FB413133578AE00C1068F /* scottocat.jpg */; };
 		31CE731611987723006C68D9 /* ShowOffPadPresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE731511987723006C68D9 /* ShowOffPadPresentController.m */; };
 		31CE739A119879D7006C68D9 /* ShowOffPadPresentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */; };
 		31CE759A1198A79A006C68D9 /* UITouchyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE75991198A79A006C68D9 /* UITouchyView.m */; };
@@ -51,7 +51,7 @@
 		28D7ACF60DDB3853001CB0EB /* ShowOffPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOffPadViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* ShowOffPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOffPadViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		314FB4111335760700C1068F /* chacon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chacon.jpg; sourceTree = "<group>"; };
+		314FB413133578AE00C1068F /* scottocat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scottocat.jpg; sourceTree = "<group>"; };
 		31CE731411987723006C68D9 /* ShowOffPadPresentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOffPadPresentController.h; sourceTree = "<group>"; };
 		31CE731511987723006C68D9 /* ShowOffPadPresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOffPadPresentController.m; sourceTree = "<group>"; };
 		31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowOffPadPresentController.xib; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				314FB4111335760700C1068F /* chacon.jpg */,
+				314FB413133578AE00C1068F /* scottocat.jpg */,
 				2899E5210DE3E06400AC0155 /* ShowOffPadViewController.xib */,
 				8D1107310486CEB800E47090 /* ShowOffPad-Info.plist */,
 				31CE7399119879D7006C68D9 /* ShowOffPadPresentController.xib */,
@@ -286,7 +286,7 @@
 				31CE792D1199BD35006C68D9 /* MainWindow.xib in Resources */,
 				777DDB7112D11DD300AF4026 /* LICENSE in Resources */,
 				777DDB7412D11DD300AF4026 /* README.rdoc in Resources */,
-				314FB4121335760700C1068F /* chacon.jpg in Resources */,
+				314FB414133578AE00C1068F /* scottocat.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
