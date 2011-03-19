@@ -77,11 +77,6 @@
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-	NSString *response = [request responseString];
-	
-	NSData* aData;
-	aData = [response dataUsingEncoding: NSASCIIStringEncoding];
-	
 	NSString *base = [[request url] path];
 	if ([base isEqualToString:@"/index"]) {
 		base = @"/index.html";
@@ -92,7 +87,9 @@
 	
 	NSString *dirPath = [filePath stringByDeletingLastPathComponent];
 	[fm createDirectoryAtPath:dirPath withIntermediateDirectories:TRUE attributes:nil error:&error];
-	[fm createFileAtPath:filePath contents:aData attributes:nil];
+
+    NSData *response = [request responseData];
+    [fm createFileAtPath:filePath contents:response attributes:nil];
 
 	NSLog(@"FU: %@", filePath);
 	importStatus.text = [NSString stringWithFormat:@"Downloading %@", base];
