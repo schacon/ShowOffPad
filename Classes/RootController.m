@@ -45,7 +45,10 @@
 		NSEnumerator *e = [[fileManager contentsOfDirectoryAtPath:presoPath error:nil] objectEnumerator];
 		NSString *thisDir;
 		while ( (thisDir = [e nextObject]) ) {
-			[self.list addObject:thisDir];
+			isDir=NO;
+			if ([fileManager fileExistsAtPath:[presoPath stringByAppendingPathComponent:thisDir] isDirectory:&isDir] && isDir) {
+				[self.list addObject:thisDir];
+			}
 		}
 	}
 }
